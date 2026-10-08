@@ -1,0 +1,319 @@
+<!-- report-template: off -->
+<!doctype html>
+<html lang="zh-Hant-TW" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="slide-deck" content="v1">
+<title>HTML 簡報製作規範</title>
+<link rel="stylesheet" href="vendor/reveal/reset.css">
+<link rel="stylesheet" href="vendor/reveal/reveal.css">
+<link rel="stylesheet" href="vendor/reveal/plugin/monokai.css">
+<link rel="stylesheet" href="css/deck.css">
+</head>
+<body>
+
+<div class="top-progress" aria-hidden="true"><i id="topProg"></i></div>
+
+<aside class="sidebar" id="sidebar" aria-label="章節導覽">
+  <div class="deck-title">HTML 簡報製作規範</div>
+  <nav id="chapNav"></nav>
+  <div class="side-foot">
+    <div class="counter" id="counter" aria-live="polite">01</div>
+    <div id="chapName"></div>
+    <div class="chap-prog" aria-hidden="true"><i id="chapProg"></i></div>
+    <div class="keys"><kbd>←</kbd><kbd>→</kbd> 換頁 <kbd>O</kbd> 總覽 <kbd>F</kbd> 全螢幕<br><kbd>S</kbd> 講者模式 <kbd>T</kbd> 深淺色</div>
+  </div>
+</aside>
+
+<div class="toolbar">
+  <button class="btn menu-btn" id="menuBtn" type="button" aria-label="開啟章節選單"><span></span><span></span><span></span></button>
+  <button class="btn" id="overviewBtn" type="button" aria-label="切換總覽模式">總覽</button>
+  <button class="btn" id="themeBtn" type="button" aria-label="切換深色／淺色投影模式">淺色投影</button>
+</div>
+
+<main class="deck-main">
+<div class="reveal">
+<div class="slides">
+
+<!-- ===== 內容從這裡開始：每個水平 section 用 data-chapter 標章節 ===== -->
+<!-- 01 Hero -->
+<section class="l-hero" data-chapter="開場">
+  <div class="hero-row">
+    <img class="icon xl" src="assets/icons/I01.png" alt="簡報螢幕圖示">
+    <div>
+      <span class="eyebrow">HTML-SLIDES v1</span>
+      <h1 class="hero-title">好讀優先、互動加分<br><span class="grad-text">HTML 簡報製作規範</span></h1>
+      <p class="lead">兩個硬條件加上完全離線，讓每一份簡報長得一致、好讀，而且能長期修改。</p>
+      <div class="tags stagger">
+        <span class="tag" data-tip="圖示不用 emoji：一次規劃，畫成一張大圖，再裁切使用">條件 1　自繪圖示大圖</span>
+        <span class="tag" data-tip="源樣黑體：標題 900、副標 700、內文 400">條件 2　源樣黑體三級粗細</span>
+        <span class="tag" data-tip="不連 CDN、不用 Google Fonts，雙擊 index.html 就能播">離線播放</span>
+      </div>
+    </div>
+  </div>
+  <p class="meta">2026-10-08 · 按 → 開始，按 O 看全部頁面</p>
+  <aside class="notes">開場：這份簡報本身就是用這套規範做出來的示範。</aside>
+</section>
+
+<!-- 02 Comparison -->
+<section data-chapter="原則">
+  <div class="slide-head">
+    <span class="eyebrow">01 原則</span>
+    <h1>HTML 簡報贏在導覽與互動，不是特效</h1>
+  </div>
+  <div class="compare">
+    <div class="side bad">
+      <h3><img class="icon sm" src="assets/icons/I07.png" alt="版型圖示">PPT 直接轉 HTML</h3>
+      <ul>
+        <li>每頁塞滿文字，變成資訊牆</li>
+        <li>用 emoji 充當圖示，風格不一</li>
+        <li>圖表貼截圖，不能看細節</li>
+        <li>引用線上字型與套件，斷網就破版</li>
+      </ul>
+    </div>
+    <div class="side good">
+      <h3><img class="icon sm" src="assets/icons/I02.png" alt="導覽圖示">本規範</h3>
+      <ul>
+        <li class="fragment rise">左側章節隨時跳轉，進度一目了然</li>
+        <li class="fragment rise">同一張大圖裁出的圖示，風格一致</li>
+        <li class="fragment rise">Chart.js 動態圖表，滑鼠移上看數值</li>
+        <li class="fragment rise">字型、套件全部放本地，離線可播</li>
+      </ul>
+    </div>
+  </div>
+  <span class="src">Source: 生成簡報Prompt.pdf［1］</span>
+</section>
+
+<!-- 03 Priority ladder -->
+<section>
+  <div class="slide-head">
+    <span class="eyebrow">01 原則</span>
+    <h1>可讀性永遠排第一，裝飾排最後</h1>
+    <p class="lead">取捨時由上往下看：上面的項目不能為了下面的項目犧牲。</p>
+  </div>
+  <div class="grid hook-grid">
+    <div class="center-v"><img class="icon xl" src="assets/icons/I03.png" alt="優先順序圖示"></div>
+    <ol class="ladder">
+      <li class="fragment rise" style="--w:100%" data-tip="觀眾 1 秒看懂這頁在講什麼，3 秒看懂重點">資訊可讀性</li>
+      <li class="fragment rise" style="--w:90%" data-tip="先內容架構，再分頁說故事，最後才是視覺">簡報敘事邏輯</li>
+      <li class="fragment rise" style="--w:80%" data-tip="標題、重點、細節三層分明">視覺層級</li>
+      <li class="fragment rise" style="--w:70%" data-tip="點擊展開、懸停提示，把細節收起來">互動體驗</li>
+      <li class="fragment rise" style="--w:60%" data-tip="動畫要幫助理解順序與因果">動畫</li>
+      <li class="fragment rise" style="--w:50%" data-tip="光暈、漸層只在不影響閱讀時使用">視覺裝飾</li>
+    </ol>
+  </div>
+  <span class="src">Source: 生成簡報Prompt.pdf〈最高優先級原則〉［1］</span>
+</section>
+
+<!-- 04 Rule 1 -->
+<section data-chapter="兩個硬條件">
+  <div class="slide-head">
+    <span class="eyebrow">02 條件 1</span>
+    <h1>圖示一次規劃、畫成一張大圖、再裁切使用</h1>
+  </div>
+  <div class="grid cols-5-7">
+    <div class="process vertical">
+      <div class="step fragment rise"><div class="n">STEP 1</div><div class="t">列出全部圖示</div><div class="d">03_icon-inventory.md</div></div>
+      <div class="step fragment rise"><div class="n"><img class="icon sm inline" src="assets/icons/I04.png" alt="圖示大圖圖示">STEP 2</div><div class="t">畫進同一張 SVG</div><div class="d">icon-sheet.svg，雙色線條</div></div>
+      <div class="step fragment rise"><div class="n">STEP 3</div><div class="t">轉成 2 倍 PNG 大圖</div><div class="d">build_icons.py</div></div>
+      <div class="step fragment rise"><div class="n">STEP 4</div><div class="t">依格子裁成 I01–I12</div><div class="d">自動產生 ICON_MAP.md</div></div>
+    </div>
+    <figure class="sheet-fig">
+      <img class="sheet-thumb" src="assets/generated/icon-sheet.png" alt="本簡報的圖示大圖，4 欄 3 列共 12 個圖示" data-detail="d-iconmap">
+      <figcaption><img class="icon sm" src="assets/icons/I05.png" alt="裁切圖示">這份簡報的大圖（2048×1536px）。點一下看對照表。</figcaption>
+    </figure>
+  </div>
+  <p class="rule-no"><span class="badge risk">禁止</span> emoji、符號字元當圖示、Font Awesome 等圖示庫</p>
+  <template id="d-iconmap">
+    <h3>ICON MAP</h3>
+    <dl>
+      <dt>I01</dt><dd>presentation 簡報螢幕</dd>
+      <dt>I02</dt><dd>navigation 導覽</dd>
+      <dt>I03</dt><dd>priority 優先順序</dd>
+      <dt>I04</dt><dd>icon-sheet 圖示大圖</dd>
+      <dt>I05</dt><dd>crop 裁切</dd>
+      <dt>I06</dt><dd>typography 字體</dd>
+      <dt>I07</dt><dd>layout 版型</dd>
+      <dt>I08</dt><dd>click 互動點擊</dd>
+      <dt>I09</dt><dd>quality-shield 把關</dd>
+      <dt>I10</dt><dd>motion 動畫</dd>
+      <dt>I11</dt><dd>offline 離線</dd>
+      <dt>I12</dt><dd>flag 結論</dd>
+    </dl>
+    <p class="muted">每格 256px，渲染 2 倍後裁成 512px 的 PNG。改圖只要改 SVG 再執行一次 build_icons.py。</p>
+  </template>
+  <aside class="notes">重點：圖示不是逐張產生，而是一次畫在同一張大圖，所以風格必然一致。</aside>
+</section>
+
+<!-- 05 Rule 2 -->
+<section>
+  <div class="slide-head">
+    <span class="eyebrow">02 條件 2</span>
+    <h1>標題 900、副標 700、內文 400，一眼分出層級</h1>
+  </div>
+  <div class="grid cols-2">
+    <div class="specimen">
+      <div class="sp-row"><span class="sp-w">900 Heavy</span><span class="sp-title">標題說結論</span></div>
+      <div class="sp-row"><span class="sp-w">700 Bold</span><span class="sp-sub">副標與 KPI 數字</span></div>
+      <div class="sp-row"><span class="sp-w">400 Regular</span><span class="sp-body">內文保持清爽易讀，最小不低於 1.4rem。</span></div>
+      <p class="hint"><img class="icon sm inline" src="assets/icons/I06.png" alt="字體圖示">字體：源樣黑體 GenYoGothic2 TW，只抽出本簡報用到的字，轉成 woff2。</p>
+    </div>
+    <div class="chart-box chart-tall">
+      <div class="chart-title">字級階層（rem，1600×900 畫布）</div>
+      <canvas data-chart="c-type" role="img" aria-label="字級階層橫向長條圖：Hero 4.5、H1 3.6、H2 2.6、H3 1.9、內文 1.7、內文下限 1.4、小字 1.15"></canvas>
+    </div>
+  </div>
+  <script type="application/json" id="c-type">
+  {"type":"bar",
+   "data":{"labels":["Hero","H1 標題","H2 副標","H3 小標","內文","內文下限","小字（來源）"],
+           "datasets":[{"label":"字級 rem","data":[4.5,3.6,2.6,1.9,1.7,1.4,1.15]}]},
+   "options":{"indexAxis":"y","plugins":{"legend":{"display":false}},
+              "scales":{"x":{"beginAtZero":true,"max":5,"title":{"display":true,"text":"rem"}},"y":{"grid":{"display":false}}}}}
+  </script>
+  <span class="src">Source: html-slides 設計規範［2］；字型 GenYoGothic2 v2.100（SIL OFL 1.1）［4］</span>
+</section>
+
+<!-- 06 KPI -->
+<section data-chapter="版型與互動">
+  <div class="slide-head">
+    <span class="eyebrow">03 可讀性底線</span>
+    <h1>四個數字守住可讀性</h1>
+    <p class="lead">每份簡報都要守住這四個數字，hook 會自動檢查其中三項。</p>
+  </div>
+  <div class="grid cols-4 stagger">
+    <div class="kpi"><div class="value"><span class="count" data-to="1">0</span></div><div class="label">每頁主訊息</div><div class="trend">標題直接寫結論</div></div>
+    <div class="kpi"><div class="value">&le;<span class="count" data-to="7">0</span></div><div class="label">每頁條列上限</div><div class="trend">超過就拆頁或收進點擊</div></div>
+    <div class="kpi"><div class="value">&ge;<span class="count" data-to="1.4" data-suffix="rem">0rem</span></div><div class="label">內文字級下限</div><div class="trend">預設 1.7rem</div></div>
+    <div class="kpi"><div class="value"><span class="count" data-to="0">0</span></div><div class="label">外部連線</div><div class="trend">CDN、線上字型都不用</div></div>
+  </div>
+  <div class="layout-strip">
+    <img class="icon sm" src="assets/icons/I07.png" alt="版型圖示">
+    <span>可用版型：</span>
+    <span class="chip" data-tip="封面、章節封面">A 封面</span><span class="chip" data-tip="關鍵數字">B KPI</span><span class="chip" data-tip="說明＋圖">C 雙欄</span><span class="chip" data-tip="里程碑">D 時間軸</span><span class="chip" data-tip="時程、關鍵路徑">E 甘特</span><span class="chip" data-tip="步驟、因果">F 流程</span><span class="chip" data-tip="A 對 B">G 比較</span><span class="chip" data-tip="圖表＋KPI">H 儀表板</span><span class="chip" data-tip="架構、機制">I 圖解</span><span class="chip" data-tip="結論、下一步">J 結尾</span>
+  </div>
+</section>
+
+<!-- 07 Gantt -->
+<section>
+  <div class="slide-head">
+    <span class="eyebrow">03 製作流程</span>
+    <h1>製作流程只有一個等待點：Storyboard 確認</h1>
+    <p class="lead">確認前只做規劃；確認後一路做到瀏覽器 QA 通過。</p>
+  </div>
+  <div class="gantt" style="--cols:6">
+    <div class="g-head">工作</div><div class="g-head">步驟 1</div><div class="g-head">步驟 2</div><div class="g-head">步驟 3</div><div class="g-head">步驟 4</div><div class="g-head">步驟 5</div><div class="g-head">步驟 6</div>
+    <div class="g-name">內容分析與規劃</div>
+    <div class="g-track g-row"><div class="g-bar" style="--s:1;--e:3" data-tip="Content Map、Storyboard、Icon Inventory、Design System" data-detail="d-plan">規劃 01–04</div></div>
+    <div class="g-name crit">使用者確認</div>
+    <div class="g-track g-row"><div class="g-bar milestone" style="--s:3;--e:4" data-tip="唯一的等待點：使用者看過 Storyboard 才繼續" data-detail="d-ok" aria-label="使用者確認 Storyboard"></div></div>
+    <div class="g-name">圖示大圖與裁切</div>
+    <div class="g-track g-row"><div class="g-bar" style="--s:4;--e:5" data-tip="icon-sheet.svg → PNG → Ixx.png" data-detail="d-icon">圖示</div></div>
+    <div class="g-name">撰寫 HTML</div>
+    <div class="g-track g-row"><div class="g-bar" style="--s:4;--e:6" data-tip="只改內容區，樣式寫在 deck.css" data-detail="d-html">HTML 與互動</div></div>
+    <div class="g-name">抽字與 QA</div>
+    <div class="g-track g-row"><div class="g-bar crit" style="--s:6;--e:7" data-tip="build_fonts.py ＋ qa_render.py，直到沒有 FAIL" data-detail="d-qa">抽字＋QA</div></div>
+  </div>
+  <p class="hint"><img class="icon sm inline" src="assets/icons/I08.png" alt="點擊圖示">滑鼠移到橫條看說明，點一下開詳細面板，按 Esc 關閉。</p>
+  <template id="d-plan"><h3>內容分析與規劃</h3><dl><dt>產出</dt><dd>01_content-map、02_storyboard、03_icon-inventory、04_design-system</dd><dt>重點</dt><dd>先決定每頁目的與呈現形式，不把原文平均分頁</dd><dt>狀態</dt><dd><span class="badge ok">本簡報已完成</span></dd></dl></template>
+  <template id="d-ok"><h3>使用者確認 Storyboard</h3><dl><dt>規則</dt><dd>使用者明確同意後，才把 02_storyboard.md 改成「狀態：已確認」</dd><dt>把關</dt><dd>未確認時 hook 會擋下 index.html 的修改</dd></dl></template>
+  <template id="d-icon"><h3>圖示大圖與裁切</h3><dl><dt>腳本</dt><dd>build_icons.py</dd><dt>輸出</dt><dd>icon-sheet.png、assets/icons/Ixx.png、ICON_MAP.md</dd></dl></template>
+  <template id="d-html"><h3>撰寫 HTML 與互動</h3><dl><dt>範圍</dt><dd>只改內容區；新樣式加在 css/deck.css 尾端</dd><dt>元件</dt><dd>reference/components.md 列出的版型與元件</dd></dl></template>
+  <template id="d-qa"><h3>抽字與 QA</h3><dl><dt>抽字</dt><dd>build_fonts.py，每次改文字都要重跑</dd><dt>QA</dt><dd>qa_render.py：1920×1080、1366×768、1024×768，深淺色各一輪</dd><dt>完成條件</dt><dd><span class="badge ok">FAIL 為 0</span></dd></dl></template>
+</section>
+
+<!-- 08 Hook table -->
+<section data-chapter="自動把關">
+  <div class="slide-head">
+    <span class="eyebrow">04 HOOK</span>
+    <h1>必修項目直接擋下，品質問題只提醒</h1>
+  </div>
+  <div class="grid hook-grid">
+    <div class="center-v"><img class="icon xl" src="assets/icons/I09.png" alt="把關盾牌圖示"></div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>檢查項目</th><th>等級</th><th>不合格時</th></tr></thead>
+        <tbody>
+          <tr><td>emoji、符號圖示、圖示庫</td><td><span class="badge risk">擋下</span></td><td>改用 assets/icons/Ixx.png</td></tr>
+          <tr><td>大圖 → 裁切鏈是否最新</td><td><span class="badge risk">擋下</span></td><td>重跑 build_icons.py</td></tr>
+          <tr><td>源樣黑體與 900／700／400</td><td><span class="badge risk">擋下</span></td><td>只能用字重 tokens</td></tr>
+          <tr><td>有字沒抽進字型</td><td><span class="badge risk">擋下</span></td><td>重跑 build_fonts.py</td></tr>
+          <tr><td>CDN、線上字型、外部圖片</td><td><span class="badge risk">擋下</span></td><td>下載到 vendor／assets</td></tr>
+          <tr><td>Storyboard 未確認就動工</td><td><span class="badge risk">擋下</span></td><td>先給使用者確認</td></tr>
+          <tr><td>單一清單超過 7 條、標題只寫分類</td><td><span class="badge info">提醒</span></td><td>拆頁、標題改寫成結論</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <span class="src">另有提示詞 hook：訊息提到「簡報」時，自動提醒使用 html-slides skill。</span>
+</section>
+
+<!-- 09 Motion -->
+<section>
+  <div class="slide-head">
+    <span class="eyebrow">04 動畫</span>
+    <h1>動畫用來解釋，不用來炫技</h1>
+    <p class="lead">原則：<strong>輕、順、快、有目的</strong>。系統開啟「減少動態效果」時自動停用。</p>
+  </div>
+  <div class="compare">
+    <div class="side good">
+      <h3><img class="icon sm" src="assets/icons/I10.png" alt="動畫圖示">可以用</h3>
+      <ul>
+        <li class="fragment rise">逐步揭露：按一下出現一點</li>
+        <li class="fragment rise">圖表進頁才長出來</li>
+        <li class="fragment rise">KPI 數字從 0 跳到定值</li>
+        <li class="fragment rise">甘特橫條、圖解線條依序畫出</li>
+      </ul>
+    </div>
+    <div class="side bad">
+      <h3>禁止</h3>
+      <ul>
+        <li>每個字都飛進來</li>
+        <li>圖示旋轉、無意義彈跳</li>
+        <li>閃爍、連續縮放</li>
+        <li>大量粒子與過度 3D</li>
+      </ul>
+    </div>
+  </div>
+  <span class="src">Source: 生成簡報Prompt.pdf〈動畫設計〉［1］</span>
+</section>
+
+<!-- 10 Closing -->
+<section class="l-closing" data-chapter="結尾">
+  <div class="closing-head">
+    <img class="icon lg" src="assets/icons/I12.png" alt="旗幟圖示">
+    <h1>記住三件事，每份簡報都一致</h1>
+  </div>
+  <ol class="takeaways stagger">
+    <li><span><strong>先給 Storyboard</strong>：使用者確認後才開始做</span></li>
+    <li><span><strong>圖示畫成一張大圖再裁切</strong>：不用 emoji，不用圖示庫</span></li>
+    <li><span><strong>源樣黑體 900／700／400</strong>：全部離線，雙擊就能播</span></li>
+  </ol>
+  <div class="refs">
+    <img class="icon sm" src="assets/icons/I11.png" alt="離線圖示">
+    <div>
+      <p class="small">［1］生成簡報Prompt.pdf（使用者提供，讀取 2026-10-08）　［2］2026-10-08 與使用者確認的規則</p>
+      <p class="small">［3］Reveal.js 6.0.2（2026-09-10）、Chart.js 4.5.1　［4］GenYoGothic2 v2.100，github.com/ButTaiwan/genyog-font（2024-08-22）</p>
+    </div>
+  </div>
+</section>
+<!-- ===== 內容結束 ===== -->
+
+</div>
+</div>
+</main>
+
+<div class="tip" id="tip" role="tooltip"></div>
+<div class="scrim" id="scrim"></div>
+<aside class="detail" id="detail" aria-hidden="true" aria-label="詳細資訊">
+  <button class="btn close" id="detailClose" type="button" aria-label="關閉詳細資訊">關閉</button>
+  <div id="detailBody"></div>
+</aside>
+
+<script src="vendor/reveal/reveal.js"></script>
+<script src="vendor/reveal/plugin/notes.js"></script>
+<script src="vendor/reveal/plugin/highlight.js"></script>
+<script src="vendor/chart/chart.umd.min.js"></script>
+<script src="js/deck.js"></script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+reveal.js 6.0.2 (npm, 2026-09-10)
+chart.js 4.5.1 (npm)

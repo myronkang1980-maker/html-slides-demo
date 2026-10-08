@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768" width="1024" height="768" data-cell="256" data-cols="4">
+  <!--
+    Icon Sheet · HTML 簡報製作規範（12 個圖示，4 欄 × 3 列，每格 256px）
+    風格：雙色線條 duotone line。線條 url(#gs) 12px 圓角；色塊 url(#gf) 半透明、略微錯位。
+    由 build_icons.py 渲染成 icon-sheet.png 並裁切成 assets/icons/Ixx.png。
+  -->
+  <defs>
+    <linearGradient id="gs" gradientUnits="userSpaceOnUse" x1="32" y1="32" x2="224" y2="224">
+      <stop offset="0" stop-color="#2DD4BF"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+    <linearGradient id="gf" gradientUnits="userSpaceOnUse" x1="32" y1="32" x2="224" y2="224">
+      <stop offset="0" stop-color="#2DD4BF" stop-opacity=".30"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity=".18"/>
+    </linearGradient>
+  </defs>
+
+  <g fill="none" stroke="url(#gs)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- 第 1 列 -->
+    <g id="I01" data-name="presentation" data-desc="投影螢幕＋腳架，螢幕內上升折線" transform="translate(0,0)">
+      <rect x="54" y="58" width="176" height="118" rx="14" fill="url(#gf)" stroke="none"/>
+      <rect x="40" y="44" width="176" height="118" rx="14"/>
+      <path d="M128 162 V196 M128 196 L98 222 M128 196 L158 222"/>
+      <path d="M70 134 L102 106 L130 120 L170 80"/>
+      <circle cx="170" cy="80" r="8" fill="url(#gs)" stroke="none"/>
+    </g>
+
+    <g id="I02" data-name="navigation" data-desc="一個起點分岔到兩個節點的路徑" transform="translate(256,0)">
+      <circle cx="198" cy="70" r="24" fill="url(#gf)" stroke="none"/>
+      <circle cx="198" cy="198" r="24" fill="url(#gf)" stroke="none"/>
+      <circle cx="62" cy="128" r="20"/>
+      <circle cx="192" cy="64" r="20"/>
+      <circle cx="192" cy="192" r="20"/>
+      <path d="M82 128 C128 128 126 64 172 64"/>
+      <path d="M82 128 C128 128 126 192 172 192"/>
+    </g>
+
+    <g id="I03" data-name="priority" data-desc="由高到低三根長條，最高者頂端有圓點" transform="translate(512,0)">
+      <rect x="60" y="84" width="40" height="132" rx="10" fill="url(#gf)" stroke="none"/>
+      <rect x="116" y="124" width="40" height="92" rx="10" fill="url(#gf)" stroke="none"/>
+      <rect x="172" y="164" width="40" height="52" rx="10" fill="url(#gf)" stroke="none"/>
+      <rect x="52" y="76" width="40" height="132" rx="10"/>
+      <rect x="108" y="116" width="40" height="92" rx="10"/>
+      <rect x="164" y="156" width="40" height="52" rx="10"/>
+      <circle cx="72" cy="42" r="9" fill="url(#gs)" stroke="none"/>
+    </g>
+
+    <g id="I04" data-name="icon-sheet" data-desc="2×2 方格拼成的大圖，對角兩格上色" transform="translate(768,0)">
+      <rect x="44" y="44" width="76" height="76" rx="14" fill="url(#gf)" stroke="none"/>
+      <rect x="136" y="136" width="76" height="76" rx="14" fill="url(#gf)" stroke="none"/>
+      <rect x="44" y="44" width="76" height="76" rx="14"/>
+      <rect x="136" y="44" width="76" height="76" rx="14"/>
+      <rect x="44" y="136" width="76" height="76" rx="14"/>
+      <rect x="136" y="136" width="76" height="76" rx="14"/>
+    </g>
+
+    <!-- 第 2 列 -->
+    <g id="I05" data-name="crop" data-desc="兩組 L 形裁切框交疊，中間是保留區" transform="translate(0,256)">
+      <rect x="80" y="80" width="96" height="96" rx="6" fill="url(#gf)" stroke="none"/>
+      <path d="M80 36 V176 H220"/>
+      <path d="M36 80 H176 V220"/>
+    </g>
+
+    <g id="I06" data-name="typography" data-desc="線條畫的大寫 A＋三條由細到粗的線（400／700／900）" transform="translate(256,256)">
+      <path d="M96 84 L130 186 H62 Z" fill="url(#gf)" stroke="none"/>
+      <path d="M38 204 L94 52 L150 204"/>
+      <path d="M62 150 H126"/>
+      <path d="M176 92 H220" stroke-width="6"/>
+      <path d="M176 136 H220" stroke-width="13"/>
+      <path d="M176 184 H220" stroke-width="22"/>
+    </g>
+
+    <g id="I07" data-name="layout" data-desc="版型線框：標題列＋左大右小兩欄" transform="translate(512,256)">
+      <rect x="52" y="108" width="96" height="84" rx="8" fill="url(#gf)" stroke="none"/>
+      <rect x="36" y="48" width="184" height="160" rx="16"/>
+      <path d="M36 88 H220"/>
+      <path d="M168 116 H200 M168 144 H200 M168 172 H188"/>
+    </g>
+
+    <g id="I08" data-name="click" data-desc="游標箭頭＋點擊放射線" transform="translate(768,256)">
+      <path d="M96 76 L96 206 L126 176 L148 220 L170 210 L148 166 L192 166 Z" fill="url(#gf)"/>
+      <path d="M62 76 H40 M74 46 L58 30 M104 40 L108 20 M132 54 L148 40"/>
+    </g>
+
+    <!-- 第 3 列 -->
+    <g id="I09" data-name="quality-shield" data-desc="盾牌內一個勾" transform="translate(0,512)">
+      <path d="M128 36 L204 64 V122 C204 170 172 202 128 220 C84 202 52 170 52 122 V64 Z" fill="url(#gf)"/>
+      <path d="M94 128 L118 152 L164 104"/>
+    </g>
+
+    <g id="I10" data-name="motion" data-desc="弧線軌跡＋由淡到實的三個圓點" transform="translate(256,512)">
+      <path d="M40 208 Q96 72 214 62" stroke-dasharray="2 24"/>
+      <circle cx="78" cy="138" r="11" fill="url(#gs)" stroke="none" opacity=".35"/>
+      <circle cx="132" cy="90" r="15" fill="url(#gs)" stroke="none" opacity=".65"/>
+      <circle cx="200" cy="64" r="22" fill="url(#gf)"/>
+    </g>
+
+    <g id="I11" data-name="offline" data-desc="資料夾＋閃電，代表本地檔案即可播放" transform="translate(512,512)">
+      <path d="M40 76 Q40 64 52 64 H106 L126 88 H204 Q216 88 216 100 V196 Q216 208 204 208 H52 Q40 208 40 196 Z" fill="url(#gf)"/>
+      <path d="M138 108 L106 152 H134 L120 190 L160 138 H132 Z" stroke-width="10"/>
+    </g>
+
+    <g id="I12" data-name="flag" data-desc="插在地面的旗幟，代表結論" transform="translate(768,512)">
+      <path d="M72 50 C112 34 144 74 196 54 V128 C144 148 112 108 72 124 Z" fill="url(#gf)"/>
+      <path d="M72 36 V220 M44 220 H112"/>
+    </g>
+  </g>
+</svg>
